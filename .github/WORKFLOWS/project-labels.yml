@@ -33,7 +33,7 @@ jobs:
           ISSUE_ID=$(gh issue view $ISSUE_NUMBER --json id --jq '.id')
           
           # Define your label to project field mappings
-          if echo "$LABELS" | grep -q "p0"; then
+          if echo "$LABELS" | grep -q "Priority: P0"; then
               gh api graphql -f query="mutation {
                 updateProjectV2ItemFieldValue(
                   input: {
