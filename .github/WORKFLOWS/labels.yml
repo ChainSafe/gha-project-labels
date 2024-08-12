@@ -1,3 +1,4 @@
+# TODO: Only run on specific labels https://stackoverflow.com/questions/62325286/run-github-actions-when-pull-requests-have-a-specific-label
 name: Assign Project Fields Based on Labels
 
 on:
