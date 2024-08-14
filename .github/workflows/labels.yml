@@ -9,10 +9,7 @@ jobs:
   update-project:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      issues: read
-      repository-projects: write
+    permissions: write-all
 
     steps:
       - name: Checkout repository
