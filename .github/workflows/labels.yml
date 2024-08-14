@@ -9,7 +9,11 @@ jobs:
   update-project:
     runs-on: ubuntu-latest
 
-    permissions: write-all
+    permissions:
+      contents: read
+      issues: read
+      repository-projects: write
+
 
     steps:
       - name: Checkout repository
@@ -17,8 +21,11 @@ jobs:
 
       - name: Update project fields based on labels
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
+          # TODO: Remove
+          gh auth status
+          
           ISSUE_NUMBER=${{ github.event.issue.number }}
           # Static IDs fetched using GH GraphQL API
           PROJECT_ID=PVT_kwDOAaM4rc4Al8Zm
